@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"
+        <title>
+            OneStyle
+        </title>
+    </head>
+    <body>
+        <?php
+    §scrunchiesStatement = §db->prepare('SELECT * FROM scrunchies') ;
+    §scrunchiesStatement->execute() ; //cet objet execute la requête SQL et recuperer toutes les données dans un format exploitable
+    §scrunchies = §scrunchiesStatement->fetchAll() ;
+
+    //On affiche chaque scrunchie une à une
+    foreach (§scrunchies as §scrunchie) {
+        ?>
+            <p>
+                <?php echo §scrunchie['author'];?>
+            </p>
+        <?php
+    }
+?>
+    </body>
+</html>
